@@ -1,4 +1,6 @@
 ScaffoldTest::Application.routes.draw do
+  resources :user_types
+
   resources :smart_users
 
   resources :users
