@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @smart_user.name %>
+</p>
+
+<p>
+  <strong>Pass:</strong>
+  <%= @smart_user.pass %>
+</p>
+
+<p>
+  <strong>User type:</strong>
+  <%= @smart_user.user_type %>
+</p>
+
+<%= link_to 'Edit', edit_smart_user_path(@smart_user) %> |
+<%= link_to 'Back', smart_users_path %>

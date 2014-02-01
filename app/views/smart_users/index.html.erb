@@ -1,0 +1,31 @@
+<h1>Listing smart_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Pass</th>
+      <th>User type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @smart_users.each do |smart_user| %>
+      <tr>
+        <td><%= smart_user.name %></td>
+        <td><%= smart_user.pass %></td>
+        <td><%= smart_user.user_type %></td>
+        <td><%= link_to 'Show', smart_user %></td>
+        <td><%= link_to 'Edit', edit_smart_user_path(smart_user) %></td>
+        <td><%= link_to 'Destroy', smart_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Smart user', new_smart_user_path %>

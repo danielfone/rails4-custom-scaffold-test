@@ -1,0 +1,2 @@
+module SmartUsersHelper
+end

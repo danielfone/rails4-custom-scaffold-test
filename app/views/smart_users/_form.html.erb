@@ -1,0 +1,29 @@
+<%= form_for(@smart_user) do |f| %>
+  <% if @smart_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@smart_user.errors.count, "error") %> prohibited this smart_user from being saved:</h2>
+
+      <ul>
+      <% @smart_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :pass %><br>
+    <%= f.text_field :pass %>
+  </div>
+  <div class="field">
+    <%= f.label :user_type_id %><br>
+    <%= f.collection_select :user_type_id, UserType.all, :id, :name, prompt: true  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
